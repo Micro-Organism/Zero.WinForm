@@ -33,14 +33,17 @@ namespace Zero.WinFormMain
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.主页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProgressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ribbonFormRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dos命令DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.multiThreadTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +63,10 @@ namespace Zero.WinFormMain
             // 主页ToolStripMenuItem
             // 
             this.主页ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ProgressToolStripMenuItem});
+            this.ProgressToolStripMenuItem,
+            this.ribbonFormRToolStripMenuItem,
+            this.dos命令DToolStripMenuItem,
+            this.multiThreadTToolStripMenuItem});
             this.主页ToolStripMenuItem.Name = "主页ToolStripMenuItem";
             this.主页ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.主页ToolStripMenuItem.Text = "主页";
@@ -68,9 +74,23 @@ namespace Zero.WinFormMain
             // ProgressToolStripMenuItem
             // 
             this.ProgressToolStripMenuItem.Name = "ProgressToolStripMenuItem";
-            this.ProgressToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ProgressToolStripMenuItem.Text = "进程工具(&P)";
             this.ProgressToolStripMenuItem.Click += new System.EventHandler(this.ProgressToolStripMenuItem_Click);
+            // 
+            // ribbonFormRToolStripMenuItem
+            // 
+            this.ribbonFormRToolStripMenuItem.Name = "ribbonFormRToolStripMenuItem";
+            this.ribbonFormRToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ribbonFormRToolStripMenuItem.Text = "RibbonForm(&R)";
+            this.ribbonFormRToolStripMenuItem.Click += new System.EventHandler(this.ribbonFormRToolStripMenuItem_Click);
+            // 
+            // dos命令DToolStripMenuItem
+            // 
+            this.dos命令DToolStripMenuItem.Name = "dos命令DToolStripMenuItem";
+            this.dos命令DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dos命令DToolStripMenuItem.Text = "Dos命令(&D)";
+            this.dos命令DToolStripMenuItem.Click += new System.EventHandler(this.dosFormDToolStripMenuItem_Click);
             // 
             // 工具ToolStripMenuItem
             // 
@@ -96,16 +116,6 @@ namespace Zero.WinFormMain
             this.statusStrip.Size = new System.Drawing.Size(984, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 25);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(984, 534);
-            this.panelMain.TabIndex = 2;
             // 
             // toolStripProgressBar1
             // 
@@ -135,6 +145,23 @@ namespace Zero.WinFormMain
             this.toolStripSplitButton1.Name = "toolStripSplitButton1";
             this.toolStripSplitButton1.Size = new System.Drawing.Size(32, 20);
             this.toolStripSplitButton1.Text = "toolStripSplitButton1";
+            // 
+            // panelMain
+            // 
+            this.panelMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 25);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(984, 534);
+            this.panelMain.TabIndex = 2;
+            // 
+            // multiThreadTToolStripMenuItem
+            // 
+            this.multiThreadTToolStripMenuItem.Name = "multiThreadTToolStripMenuItem";
+            this.multiThreadTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.multiThreadTToolStripMenuItem.Text = "多线程工具(&T)";
+            this.multiThreadTToolStripMenuItem.Click += new System.EventHandler(this.multiThreadTToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -174,6 +201,9 @@ namespace Zero.WinFormMain
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem ribbonFormRToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dos命令DToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multiThreadTToolStripMenuItem;
     }
 }
 

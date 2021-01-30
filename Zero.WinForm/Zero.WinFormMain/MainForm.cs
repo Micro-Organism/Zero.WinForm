@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using Zero.WinFormCtrlLib;
 
 namespace Zero.WinFormMain
@@ -12,10 +13,21 @@ namespace Zero.WinFormMain
         /// </summary>
         UcMainForm ucMainForm;
         /// <summary>
+        /// DOS命令
+        /// </summary>
+        UcDosForm ucDosForm;
+        /// <summary>
         /// 进程界面
         /// </summary>
         UcProgressForm ucProgressForm;
-
+        /// <summary>
+        /// RibbonForm
+        /// </summary>
+        UcRibbon ribbonForm;
+        /// <summary>
+        /// 多线程
+        /// </summary>
+        UcMultiThreadForm ucMultiThreadForm;
         #endregion
 
         #region 构造函数
@@ -46,6 +58,47 @@ namespace Zero.WinFormMain
             this.panelMain.Refresh();
         }
 
+        /// <summary>
+        /// ribbonForm
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ribbonFormRToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panelMain.Controls.Clear();
+            ribbonForm = new UcRibbon();
+            ribbonForm.Dock = DockStyle.Fill;
+            this.panelMain.Controls.Add(ribbonForm);
+            this.panelMain.Refresh();
+        }
+
+        /// <summary>
+        /// DOS命令
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dosFormDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panelMain.Controls.Clear();
+            ucDosForm = new UcDosForm();
+            ucDosForm.Dock = DockStyle.Fill;
+            this.panelMain.Controls.Add(ucDosForm);
+            this.panelMain.Refresh();
+        }
+
+        /// <summary>
+        /// 多线程
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void multiThreadTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.panelMain.Controls.Clear();
+            ucMultiThreadForm = new UcMultiThreadForm();
+            ucMultiThreadForm.Dock = DockStyle.Fill;
+            this.panelMain.Controls.Add(ucMultiThreadForm);
+            this.panelMain.Refresh();
+        }
         #endregion
 
         #region 基本方法
@@ -63,6 +116,5 @@ namespace Zero.WinFormMain
         }
 
         #endregion
-
     }
 }

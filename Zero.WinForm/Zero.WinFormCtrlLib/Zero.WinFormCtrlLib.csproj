@@ -35,7 +35,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.Ribbon">
+      <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net45\System.Windows.Forms.Ribbon.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,41 +49,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="iTab\RibbonButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="iTab\TabPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="UcBase.cs">
+    <Compile Include="UcForms\UcBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcBase.Designer.cs">
+    <Compile Include="UcForms\UcBase.Designer.cs">
       <DependentUpon>UcBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UcProgressForm.cs">
+    <Compile Include="UcForms\UcMultiThreadForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcProgressForm.Designer.cs">
+    <Compile Include="UcForms\UcMultiThreadForm.Designer.cs">
+      <DependentUpon>UcMultiThreadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcForms\UcProgressForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcForms\UcProgressForm.Designer.cs">
       <DependentUpon>UcProgressForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcDosForm.cs">
+    <Compile Include="UcForms\UcDosForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcDosForm.Designer.cs">
+    <Compile Include="UcForms\UcDosForm.Designer.cs">
       <DependentUpon>UcDosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcMainForm.cs">
+    <Compile Include="UcForms\UcMainForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcMainForm.Designer.cs">
+    <Compile Include="UcForms\UcMainForm.Designer.cs">
       <DependentUpon>UcMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcMessageBox.cs">
+    <Compile Include="UcControls\UcMessageBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcMessageBox.Designer.cs">
+    <Compile Include="UcControls\UcMessageBox.Designer.cs">
       <DependentUpon>UcMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcForms\UcRibbon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcForms\UcRibbon.Designer.cs">
+      <DependentUpon>UcRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcControls\ZeroInputBox.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
@@ -87,21 +112,28 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcBase.resx">
+    <EmbeddedResource Include="UcForms\UcBase.resx">
       <DependentUpon>UcBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcProgressForm.resx">
+    <EmbeddedResource Include="UcForms\UcMultiThreadForm.resx">
+      <DependentUpon>UcMultiThreadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcForms\UcProgressForm.resx">
       <DependentUpon>UcProgressForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcDosForm.resx">
+    <EmbeddedResource Include="UcForms\UcDosForm.resx">
       <DependentUpon>UcDosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcMainForm.resx">
+    <EmbeddedResource Include="UcForms\UcMainForm.resx">
       <DependentUpon>UcMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcMessageBox.resx">
+    <EmbeddedResource Include="UcControls\UcMessageBox.resx">
       <DependentUpon>UcMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcForms\UcRibbon.resx">
+      <DependentUpon>UcRibbon.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -113,6 +145,9 @@
       <Project>{b73f11e1-8149-41a3-9824-f42996914e75}</Project>
       <Name>Zero.NPOILib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UcComponents\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Images\MssageInfo.png" />

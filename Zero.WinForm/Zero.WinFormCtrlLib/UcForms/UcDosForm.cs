@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Windows.Forms;
+using Zero.FrameworkLib.OSHelpers;
+using Zero.FrameworkLib.ProcessHelper;
 
 namespace Zero.WinFormCtrlLib
 {
@@ -19,6 +22,23 @@ namespace Zero.WinFormCtrlLib
         /// <param name="e"></param>
         private void btnStart_Click(object sender, EventArgs e)
         {
+            //string cmd = this.txbDos.Text.Trim();//"status"
+            //string errorStr = string.Empty;
+            //ProcessHelper.ExecuteCmd(cmd, out errorStr);
+
+            this.rtbMsg.Text = string.Empty;
+            try
+            {
+                var responses = RegisterHelper.Instance.InstallComponentList("Microsoft Visual C++ 2013 x64");
+                foreach (var item in responses)
+                {
+                    this.rtbMsg.Text += item + "\r\n";
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.ToString());
+            }
 
         }
 

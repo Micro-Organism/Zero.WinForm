@@ -21,6 +21,5 @@ namespace Zero.WinFormCtrlLib
         {
             ucMessageBox.Dispose();
         }
-
     }
 }
